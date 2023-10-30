@@ -25,6 +25,8 @@
 
 1. Lessons Graph, with progress view, with Mermaid; à la Khan
 
+1. https://overthewire.org/wargames/ content license? Contact, to integrate?
+
 1. #Hack Fix the errors Megalinter raised
 1. #Hack Run Megalinter locally, from a `./build` script
 1. #Hack Is https://megalinter.io/latest/config-apply-fixes/ OK on PRs?
