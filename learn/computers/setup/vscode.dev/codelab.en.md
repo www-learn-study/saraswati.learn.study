@@ -1,4 +1,4 @@
-# VSCode.dev Visual Studio Code on Web
+# VSCode.dev Visual Studio Code (VSC) on Web
 
 ## Prerequisites
 
@@ -8,6 +8,27 @@ TODO
 
 TODO
 
+## Keyboard Shortcuts
+
+As you learnt in [Keyboard](../keyboard/), it's great to use your keyboard instead of your mouse. In VSC on Web, use:
+
+* Ctrl-P : Go to File...
+* Ctrl-Shift-P : Command (also with Ctrl-P and then type `>`)
+
+Use Ctrl-Shift-P (Command) to _Open Keyboard Shortcuts,_ and have a look around.
+
+Try e.g. to find how to _Toggle (bottom) Panel Visibility_ and _Toggle Primary Sidebar Visibility._
+
+Because Web Browsers have a few _"hard coded"_ (fixed) Keyboard Shortcuts, Ctrl-W doesn't close the open Editor tab inside VSC, but the Brower's Tab with VSC.
+You can fix this by creating an additional new Keyboard Shorcut to Close Editor; e.g. Alt-P or Alt-L - or whatever you like.
+
+* [ ] I figured out how to hide & show the panel at the bottom and the sidebar on the left using Keyboard Shortcuts
+* [ ] I managed to create a custom Keyboard Shorcut for Close Editor!
+
+## Recommended Settings
+
+TODO Put them here, on git, and as copy/paste...
+ 
 ## Remote Development
 
 TODO
