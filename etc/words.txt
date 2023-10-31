@@ -2,3 +2,4 @@ Bazel
 Codelab
 Codelabs
 Kata
+megalinter
