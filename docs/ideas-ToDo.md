@@ -23,6 +23,8 @@
 
 ## Should
 
+1. Run https://lychee.cli.rs on generated output site (not source, as Mega Linter does)
+
 1. Last step in build.yaml should verify that git is not dirty
 
 1. Lessons Graph, with progress view, with Mermaid; à la Khan
