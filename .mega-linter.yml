@@ -19,7 +19,7 @@ APPLY_FIXES: all
 # - SPELL # Uncomment to disable checks of spelling mistakes
 
 # Keep this in sync with ignorePaths in .cspell.json
-SPELL_LYCHEE_FILTER_REGEX_EXCLUDE: (.github\|.vscode)
+SPELL_LYCHEE_FILTER_REGEX_EXCLUDE: (\.github\|\.vscode)
 
 SHOW_ELAPSED_TIME: true
 
