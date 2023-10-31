@@ -16,7 +16,10 @@ APPLY_FIXES: all
 
 # DISABLE:
 # - COPYPASTE # Uncomment to disable checks of excessive copy-pastes
-# - SPELL # Uncomment to disable checks of spelling mistakes
+
+DISABLE_LINTERS:
+  # TODO Find a good way to have fully consistent spell checking between VSC & CI
+  - SPELL_CSPELL
 
 # Keep this in sync with ignorePaths in .cspell.json
 SPELL_LYCHEE_FILTER_REGEX_EXCLUDE: (\.github\|\.vscode)
