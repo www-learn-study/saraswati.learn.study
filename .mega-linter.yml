@@ -26,6 +26,3 @@ SPELL_LYCHEE_FILTER_REGEX_EXCLUDE: (\.github|\.vscode)
 SHOW_ELAPSED_TIME: true
 
 FILEIO_REPORTER: false
-
-# TODO Enable this (but it will likely require some more work) - at least once, then disable again? (Because it won't be constantly needed, once it's clean.)
-VALIDATE_ALL_CODEBASE: true
