@@ -31,7 +31,7 @@
 
 1. https://overthewire.org/wargames/ content license? Contact, to integrate?
 
-1. Auth: https://www.keycloak.org or https://github.com/vorburger/id.learn.study with Firebase?
+1. Auth: https://www.keycloak.org or github.com/vorburger/id.learn.study with Firebase?
 
 1. Enforce conventional commits with pre-commit hook (e.g. build: content: site:)
 
