@@ -1,8 +1,18 @@
 {
+  "dictionaries": ["project-words"],
+  "dictionaryDefinitions": [
+    {
+      "name": "custom-words",
+      "path": "./etc/words.txt",
+      // Some editor extensions will use `addWords` for adding words to your personal dictionary
+      "addWords": true
+    }
+  ],
   "ignorePaths": [
     "**/node_modules/**",
     "**/vscode-extension/**",
     "**/.git/**",
+    "**/.github/**",
     "**/.pnpm-lock.json",
     ".vscode",
     "megalinter",
@@ -11,6 +21,5 @@
   ],
   "language": "en",
   "noConfigSearch": true,
-  "words": ["megalinter", "oxsecurity"],
   "version": "0.2"
 }
