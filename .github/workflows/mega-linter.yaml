@@ -4,7 +4,6 @@
 #
 # Alternative: https://github.com/super-linter/super-linter,
 # see https://megalinter.io/latest/mega-linter-vs-super-linter/
----
 name: MegaLinter
 
 # Trigger mega-linter at every push.
