@@ -8,6 +8,7 @@
       "addWords": true
     }
   ],
+  // Keep this in sync with SPELL_LYCHEE_FILTER_REGEX_EXCLUDE in .mega-linter.yml
   "ignorePaths": [
     "**/node_modules/**",
     "**/vscode-extension/**",
