@@ -23,11 +23,13 @@
 
 ## Should
 
+1. Lessons Graph, with progress view, with Mermaid; à la Khan
+
 1. Run https://lychee.cli.rs on generated output site (not source, as Mega Linter does)
 
-1. Last step in build.yaml should verify that git is not dirty
+1. https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue#triggering-merge-group-checks-with-github-actions
 
-1. Lessons Graph, with progress view, with Mermaid; à la Khan
+1. Last step in build.yaml should verify that git is not dirty
 
 1. https://overthewire.org/wargames/ content license? Contact, to integrate?
 
