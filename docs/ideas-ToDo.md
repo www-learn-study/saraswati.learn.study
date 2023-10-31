@@ -23,6 +23,8 @@
 
 ## Should
 
+1. Last step in build.yaml should verify that git is not dirty
+
 1. Lessons Graph, with progress view, with Mermaid; à la Khan
 
 1. https://overthewire.org/wargames/ content license? Contact, to integrate?
