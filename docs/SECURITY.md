@@ -5,7 +5,7 @@
 Only the `main` branch of this Git repository is supported with security updates.
 
 | Version | Supported          |
-| ------- | ------------------ |
+|---------|--------------------|
 | `main`  | :white_check_mark: |
 
 ## Reporting a Vulnerability
