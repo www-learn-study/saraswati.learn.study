@@ -2,7 +2,7 @@
   "dictionaries": ["project-words"],
   "dictionaryDefinitions": [
     {
-      "name": "custom-words",
+      "name": "project-words",
       "path": "./etc/words.txt",
       // Some editor extensions will use `addWords` for adding words to your personal dictionary
       "addWords": true
