@@ -9,7 +9,7 @@ name: MegaLinter
 # Trigger mega-linter at every push.
 # Action will also be visible from Pull Requests to main
 on:
-    push:
+  push:
 
   pull_request:
     branches:
@@ -52,7 +52,6 @@ jobs:
       pull-requests: write
 
     steps:
-
       # Git Checkout
       - name: Harden Runner
         uses: step-security/harden-runner@1b05615854632b887b69ae1be8cbefe72d3ae423 # v2.6.0
