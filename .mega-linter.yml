@@ -13,7 +13,9 @@ APPLY_FIXES: all
 
 DISABLE_LINTERS:
   # TODO Find a good way to have fully consistent spell checking between VSC & CI
+  # https://megalinter.io/latest/descriptors/spell_cspell/#ide-integration
   - SPELL_CSPELL
+
   # https://github.com/oxsecurity/megalinter/issues/2849
   # https://github.com/oxsecurity/megalinter/issues/3017
   - REPOSITORY_DEVSKIM
@@ -24,5 +26,3 @@ SPELL_LYCHEE_FILTER_REGEX_EXCLUDE: (\.github|\.vscode)
 SHOW_ELAPSED_TIME: true
 
 FILEIO_REPORTER: false
-# TODO Enable this (but it will likely require some more work) - at least once, then disable again? (Because it won't be constantly needed, once it's clean.)
-# VALIDATE_ALL_CODEBASE: true
