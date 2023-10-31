@@ -23,15 +23,15 @@
 
 ## Should
 
+1. Run https://lychee.cli.rs on generated output site (not source, as Mega Linter does)
+
 1. Last step in build.yaml should verify that git is not dirty
 
 1. Lessons Graph, with progress view, with Mermaid; à la Khan
 
 1. https://overthewire.org/wargames/ content license? Contact, to integrate?
 
-1. Disable direct commits, everything by PR, only; but auto-merge (only signed?)! PRs (from me) when builds passed
-
-1. Auth: https://www.keycloak.org or https://github.com/vorburger/id.learn.study with Firebase?
+1. Auth: https://www.keycloak.org or github.com/vorburger/id.learn.study with Firebase?
 
 1. Enforce conventional commits with pre-commit hook (e.g. build: content: site:)
 

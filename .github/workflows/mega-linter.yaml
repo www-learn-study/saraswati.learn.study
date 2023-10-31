@@ -9,7 +9,7 @@ name: MegaLinter
 # Trigger mega-linter at every push.
 # Action will also be visible from Pull Requests to main
 on:
-    push:
+  push:
 
   pull_request:
     branches:
@@ -38,6 +38,8 @@ concurrency:
 
 permissions:
   contents: read
+  pull-requests: write
+  issues: write
 
 jobs:
   megalinter:
@@ -52,7 +54,6 @@ jobs:
       pull-requests: write
 
     steps:
-
       # Git Checkout
       - name: Harden Runner
         uses: step-security/harden-runner@1b05615854632b887b69ae1be8cbefe72d3ae423 # v2.6.0
@@ -62,7 +63,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
-          token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
           # If you use VALIDATE_ALL_CODEBASE = true, you can remove this line to
           # improve performance
@@ -128,7 +129,7 @@ jobs:
           ) &&
           !contains(github.event.head_commit.message, 'skip fix')
         with:
-          token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "[MegaLinter] Apply linters automatic fixes"
           title: "[MegaLinter] Apply linters automatic fixes"
           labels: bot

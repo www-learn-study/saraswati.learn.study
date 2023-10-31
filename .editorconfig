@@ -13,14 +13,21 @@ trim_trailing_whitespace = true
 [LICENSE]
 indent_size = unset
 
-[mkdocs.yaml]
-max_line_length = unset
-
-[WORKSPACE.bazel]
-max_line_length = unset
-
 [.bazelproject]
 indent_size = 2
+
+[*.bazel]
+max_line_length = unset
+
+[*.md]
+indent_size = unset
+max_line_length = unset
+
+[*.yaml]
+max_line_length = unset
+
+[*.yml]
+max_line_length = unset
 
 # Note that https://github.com/editorconfig-checker/editorconfig-checker
 # which https://github.com/editorconfig-checker/editorconfig-checker.python
