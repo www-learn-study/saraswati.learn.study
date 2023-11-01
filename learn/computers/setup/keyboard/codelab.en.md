@@ -32,7 +32,7 @@ The _Fn_ key, confusingly, is not a "Function Key", but used e.g. to increase/de
 
 * [ ] I typed 3 words and then pressed Ctrl-Backspace and now only have 2 words
 
-## Find!
+## Find
 
 Ctrl-F let's you easily _Find_ something (like _Waldo)._
 
