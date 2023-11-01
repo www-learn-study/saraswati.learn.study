@@ -1,0 +1,68 @@
+# https://github.com/EndBug/pages-preview
+# https://github.com/EndBug/pages-preview/blob/main/dependents/source_repo.yml
+
+name: Preview
+on:
+  # NOT on push: branches: - 'main'
+  delete:
+  pull_request_target:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - closed
+
+permissions:
+  contents: read
+
+concurrency:
+  group: preview-${{ github.event_name }}-${{ github.event.number || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    name: Preview
+    runs-on: ubuntu-latest
+    env:
+      # https://github.com/www-learn-study/previews
+      PREVIEW_REPO: www-learn-study/previews
+      PAGES_BASE: https://www-learn-study.github.io/previews
+
+    steps:
+      - name: Checkout PR head
+        if: ${{ startsWith(github.event_name, 'pull_request') && github.event.action != 'closed' }}
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          ref: refs/pull/${{ github.event.pull_request.number }}/merge
+
+      # This will calculate the base URL for the website, based on the event that triggered the workflow.
+      # Leave this step as it is, unless you know what you're doing.
+      - name: Determine base URL
+        if: ${{ github.event.action != 'closed' }}
+        id: baseurl
+        run: |
+          if [ "${{ github.event_name }}" == "pull_request_target" ]; then
+            full="${{ env.PAGES_BASE }}/${{ github.repository }}/pr/${{ github.event.number }}"
+          else
+            full="${{ env.PAGES_BASE }}/${{ github.repository }}/branch/${{ github.ref_name }}"
+          fi
+
+          relative=/$(echo "$full" | cut -d/ -f4-)
+
+          echo "full=$full" >> "$GITHUB_OUTPUT"
+          echo "relative=$relative" >> "$GITHUB_OUTPUT"
+        shell: bash
+
+      - name: Build
+        if: ${{ github.event.action != 'closed' }} # Skipping these steps if the PR has been closed
+        # run: ./build.sh
+        run: echo "Hi! Buidling..."
+        env:
+          PUBLIC_URL: ${{ steps.baseurl.outputs.relative }}
+
+      - uses: EndBug/pages-preview@196e85fb8eb6e55cb82c565e2bffa8911d6ee2d6 # v1.1.1
+        with:
+          build_dir: site
+          preview_base_url: ${{ env.PAGES_BASE }}
+          preview_repo: ${{ env.PREVIEW_REPO }}
+          preview_token: ${{ secrets.PREVIEW_TOKEN }}
