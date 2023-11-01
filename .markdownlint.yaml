@@ -1,0 +1,46 @@
+# https://github.com/DavidAnson/markdownlint#optionsconfig
+# https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.yaml
+
+# Based on https://github.com/enola-dev/enola/blob/main/.markdownlint.yaml
+
+default: true
+
+MD007:
+  indent: 6
+  start_indented: false
+  # start_indent: 2
+
+MD013:
+  # Must match .editorconfig [*.md] max_line_length
+  # This 4096 means "unlimited" (unset) - essentially https://github.com/DavidAnson/markdownlint/issues/298.
+  # Until https://github.com/DavidAnson/markdownlint/issues/535 is available,
+  # it's not feasilbe to set this - just too PITA, while writing docs.
+  #
+  # One possible avenue to enable fixing automatic reflow formatting could be
+  # to enable Prettier to format MD (by removing *.md from .prettierignore).
+  # This ALMOST works, but in Prettier v2.8.4 just has some issues:
+  #   A. Breaks code blocks inside 1. 1. 1. OL; see https://github.com/prettier/prettier/issues/13175
+  #   B. Replaces '*' with '-' for UL; not my preference, but is likely intentional,
+  #      given https://prettier.io/docs/en/option-philosophy.html.
+  #   C. It over-indents '-' causing MD030; see https://github.com/prettier/prettier/issues/5299
+  #      and https://github.com/prettier/prettier/pull/5306 or https://github.com/prettier/prettier/pull/13987 ?
+  # Another avenue would be to look into a different MD formatter than Prettier,
+  # perhaps remark directly ... but that seems a bit overkill, for now.
+  line_length: 4096
+  code_blocks: true
+  code_block_line_length: 4096
+  strict: false
+  stern: false
+
+# Allow headings ending in '!'
+MD026:
+  punctuation: ",;:。，；："
+
+# Bare URL are OK
+MD034: false
+
+# https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md046---code-block-style
+# style: "indented" prevents setting code block language
+# style: "fenced" enforces ``` and thus prevents indenting, which is nicer to read in raw ASCII where possible
+# style: "consistent" prevents mixing indenting (without code block language) and fenced with code block language.
+MD046: false

@@ -1,4 +1,4 @@
-# Learn.study & ...
+# Similar sites
 
 Competition is healthy; let's compare this site to others!
 
@@ -10,7 +10,7 @@ Competition is healthy; let's compare this site to others!
 
 The format is different, both e.g. with the focus on videos, and the JS-only playground.
 
-_"E pluribus unum?"_
+_E pluribus unum?_
 
 ## freeCodeCamp.org
 
@@ -63,7 +63,7 @@ Maybe there could be some form of collaboration, or complementary, in the future
 - Slides
 - Terminal command line etc. type lessons
 - Multi-lingual (Modulo is French only, target only local schools in 1 canton of western Switzerland)
-- Modulo uses a verbose text heavy writing style, different from [our principles](../../principles/)
+- Modulo uses a verbose text heavy writing style, different from [our principles](../about/README.md#principles)
 - https://apprendre.modulo-info.ch/projets/ has all solutions? C'est bcp. moins drôle ainsi... 😄
 
 ## Other

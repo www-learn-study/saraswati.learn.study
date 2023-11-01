@@ -2,6 +2,7 @@
   "threshold": 0,
   "reporters": ["html", "markdown"],
   "ignore": [
+    "**/megalinter-reports/**",
     "**/node_modules/**",
     "**/.git/**",
     "**/.rbenv/**",

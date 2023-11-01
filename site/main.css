@@ -1,0 +1,9 @@
+.inline-block {
+    display: inline-block;
+}
+
+img.creativecommons {
+    height: 22px !important;
+    margin-left: 3px;
+    vertical-align: text-bottom;
+}
