@@ -1,0 +1,83 @@
+# This file is un-used; it's just a draft of a configuration file for an idea;
+# this is what build.sh should ideally look like declaratively instead imperatively,
+# if I would finally write Be - Yet Another Build Tool (YABT)... ;-)
+
+val:
+  # Versions
+  be:
+    ver: 0.0.3
+    md6: fbe071bcae7180df4697c55ca5e57831c8d9e394
+  codelabs:
+    rev: 9f2b585333fc582b0a545f6b4bee0f4466ef71c7
+    sha512: ...
+
+  # Directories
+  out: .build
+
+goals:
+  me:
+    is: happy
+  # $ be me
+  # me is happy
+
+  failure:
+    is: failed
+  # $ be failure
+  # failure FAILED [returns -1]
+
+  be:
+    is: fetched
+    url:
+      - https://github.com/enola-dev/be/archive/refs/heads/$be.ver.zip
+      - https://be.enola.dev/release/$be.ver
+    hash: $be
+  # $ be be
+  # be is fetched!
+
+  gct:
+    is: be.cloned
+    url: https://github.com/googlecodelabs/tools.git
+    rev: $codelabs
+
+  claat:
+    is: be.available
+    cwd: $gct/claat/
+    cmd: make
+    bin: $gct/claat/bin/claat
+  # $ be claat
+  # claat is available
+
+  claat.version:
+    is: run
+    cmd: $claat version
+  # $ be claat.version
+  # claat.version is run
+  # $ be --quiet --show-output claat.version
+  # 2.2.5-2023-10-28T13:44:54Z-9f2b585
+
+  codelab:
+    arg: md
+    is: run
+    cmd: $claat export $md -o $out/site/codelabs/$md/
+  # $ be codelab
+  # USAGE: codelab md=...
+  # $ be codelab md=learn/computers/setup/concepts/README.en.md
+  # codelab is run
+
+  static:
+    is: sync
+    cwd: site/
+    new: ln -s $1 $out/site/$1
+    del: rm $out/site/$1
+
+  served:
+    is: run
+    cwd: $out/site
+    cmd: python3 -m http.server 9000
+    dep:
+      static:
+      concepts:
+        is: codelab
+        md: learn/computers/setup/concepts/README.en.md
+  # $ be served
+  # (Website is built - and automagically rebuilt on any implicit input file change!)
