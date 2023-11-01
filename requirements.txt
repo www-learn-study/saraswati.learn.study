@@ -1,0 +1,3 @@
+# PLEASE only use fixed (package)==(version)
+
+pre-commit==3.5.0
