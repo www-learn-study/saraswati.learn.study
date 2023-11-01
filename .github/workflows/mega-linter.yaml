@@ -38,8 +38,12 @@ concurrency:
 
 permissions:
   contents: read
+  # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token
+  # NB: The "Maximum access for pull requests from public forked repositories" is still only read, even though we ask for write here;
+  # this only applies to branches on the repo itself. This makes sense security wise (committers who you can push to branches, are implictily already "trusted" anyway, as they could merge PRs).
   pull-requests: write
   issues: write
+  workflows: write
 
 jobs:
   megalinter:
