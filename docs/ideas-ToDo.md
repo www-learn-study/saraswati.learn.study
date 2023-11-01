@@ -2,9 +2,11 @@
 
 ## Must
 
-1. #Hack Codelab #1 (with Bazel)
 1. #Com A. test
 1. #Hack Kata `echo hello`
+1. #Hack Build 2nd Codelab, automagically
+1. #Hack tocs.yaml reader used to generate
+1. #Hack MD [ ] doesn't work in Codelabs
 1. #Design Homepage HTML black and matrix-like green with https://github.com/Rezmason/matrix
 1. #Hack Codelabs directory site (pending https://github.com/googlecodelabs/tools/pull/884)
 1. #Hack Slides
@@ -20,8 +22,13 @@
 1. #Com https://github.com/edunumsec2/book/blob/master/doc/comite.md
 1. #Hack SEO for client-side multilingual - `<html lang="en">` ?
 1. #Hack Write _Terms of Service_ and _Privacy Policy_
+1. #Com #Biz Merch!
 
 ## Should
+
+1. Generate Codelabs' "id" and "feedback link:" and "summary"
+
+1. Fix https://github.com/googlecodelabs/tools/issues/877 for YAML Front Matter support in claat
 
 1. Lessons Graph, with progress view, with Mermaid; à la Khan
 

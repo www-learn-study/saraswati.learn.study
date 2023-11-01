@@ -1,6 +1,12 @@
-# Computer Concepts
+author: Michael Vorburger.ch
+summary: Introduction to Computers
+id: codelab
+categories: computers,introduction
+environments: Web
+status: Published
+feedback link: https://github.com/www-learn-study/saraswati.learn.study/edit/main/learn/computers/setup/concepts/codelab.en.md
 
-## Prerequisites
+# Computer Concepts
 
 ## CPU
 
