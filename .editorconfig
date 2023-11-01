@@ -15,6 +15,9 @@ indent_size = unset
 [.bazelproject]
 indent_size = 2
 
+[humans.txt]
+indent_style = tab
+
 [*.md]
 indent_size = unset
 

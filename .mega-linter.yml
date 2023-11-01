@@ -20,8 +20,10 @@ DISABLE_LINTERS:
   # https://github.com/oxsecurity/megalinter/issues/3017
   - REPOSITORY_DEVSKIM
 
+MARKDOWN_MARKDOWNLINT_CONFIG_FILE: .markdownlint.yaml
+
 # Keep this in sync with ignorePaths in .cspell.json
-SPELL_LYCHEE_FILTER_REGEX_EXCLUDE: (\.github|\.vscode)
+SPELL_LYCHEE_FILTER_REGEX_EXCLUDE: (\.github|\.vscode|.*\.yaml)
 
 SHOW_ELAPSED_TIME: true
 

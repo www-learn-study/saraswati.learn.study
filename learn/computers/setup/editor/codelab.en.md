@@ -10,4 +10,4 @@ TODO ...
 
 ## Further Resources
 
-* [Visual Studio Code](../vscode.dev/codelab.md)
+* [Visual Studio Code](../vscode.dev/codelab.en.md)

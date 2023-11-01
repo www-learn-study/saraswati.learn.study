@@ -71,7 +71,7 @@ jobs:
 
       # MegaLinter
       - name: MegaLinter
-
+        # Keep the version in sync with bin/megalinter.sh
         uses: oxsecurity/megalinter/flavors/cupcake@v7.5.0
 
         id: ml
