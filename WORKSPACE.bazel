@@ -1,0 +1,8 @@
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+http_archive(
+    name = "googlecodelabs_tools",
+    sha256 = "9f2b585333fc582b0a545f6b4bee0f4466ef71c7",
+    strip_prefix = "",
+    urls = ["https://github.com/googlecodelabs/tools/archive/9f2b585333fc582b0a545f6b4bee0f4466ef71c7.zip"],
+)
