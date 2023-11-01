@@ -28,7 +28,7 @@ You can fix this by creating an additional new Keyboard Shorcut to Close Editor;
 ## Recommended Settings
 
 TODO Put them here, on git, and as copy/paste...
- 
+
 ## Remote Development
 
 TODO

@@ -12,13 +12,13 @@ jobs:
       issues: write
       pull-requests: write
     steps:
-    - name: Harden Runner
-      uses: step-security/harden-runner@1b05615854632b887b69ae1be8cbefe72d3ae423 # v2.6.0
-      with:
-        egress-policy: audit
+      - name: Harden Runner
+        uses: step-security/harden-runner@1b05615854632b887b69ae1be8cbefe72d3ae423 # v2.6.0
+        with:
+          egress-policy: audit
 
-    - uses: actions/first-interaction@15b3c5fd4d93b98e51b27d333f76a50ee6cb0475 # v1
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        issue-message: "Hi! Thanks for stopping by here, and welcome! Someone will hopefully comment soon."
-        pr-message: "Hello there! Welcome, and Thank You so much for contributing; Someone will hopefully review this Pull Request (PR) soon."
+      - uses: actions/first-interaction@15b3c5fd4d93b98e51b27d333f76a50ee6cb0475 # v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: "Hi! Thanks for stopping by here, and welcome! Someone will hopefully comment soon."
+          pr-message: "Hello there! Welcome, and Thank You so much for contributing; Someone will hopefully review this Pull Request (PR) soon."
