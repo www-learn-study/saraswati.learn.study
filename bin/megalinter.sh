@@ -2,4 +2,4 @@
 set -euxo pipefail
 
 # Keep the version in sync with .github/workflows/mega-linter.yaml
-npx --yes mega-linter-runner --remove-container --image oxsecurity/megalinter-cupcake:v7.5.0
+npx mega-linter-runner --remove-container --image oxsecurity/megalinter-cupcake:v7.5.0
