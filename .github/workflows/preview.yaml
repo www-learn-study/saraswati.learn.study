@@ -33,8 +33,7 @@ jobs:
 
       - name: Build
         if: ${{ github.event.action != 'closed' }} # Skipping these steps if the PR has been closed
-        # run: ./build.sh
-        run: echo "Hi! Buidling..."
+        run: ./build.sh
 
       - uses: dorny/paths-filter@4512585405083f25c027a35db413c2b3b9006d50 # v2.11.1
         id: changes
@@ -49,7 +48,7 @@ jobs:
         # TODO Re-check if https://github.com/actions/deploy-pages#inputs- support of "preview" is no longer "only in alpha currently and is not available to the public"
         uses: rossjrw/pr-preview-action@183082fd714654433c8e2f6daedbfb4f20f2a94a # v1.4.4
         with:
-          source-dir: ./site/
+          source-dir: BUILT/site/
           # https://github.com/www-learn-study/previews
           deploy-repository: www-learn-study/previews
           # custom-url: https://www-learn-study.github.io/previews
