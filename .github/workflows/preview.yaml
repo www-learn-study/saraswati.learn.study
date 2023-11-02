@@ -20,7 +20,11 @@ jobs:
   preview:
     name: Preview
     runs-on: ubuntu-latest
-
+    # Sets permissions of the GITHUB_TOKEN to allow post comment with Preview URL
+    permissions:
+      issues: write
+      pull-requests: write
+      
     steps:
       - name: Checkout PR head
         if: ${{ startsWith(github.event_name, 'pull_request') && github.event.action != 'closed' }}
