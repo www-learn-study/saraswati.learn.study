@@ -5,5 +5,5 @@ set -euxo pipefail
 
 mkdir -p BUILT/site/
 
-# TODO Rename site/ to static/
+# TODO Rename site/ to static/ or something
 find site/ -type f -exec ln -f {} BUILT/site \;
