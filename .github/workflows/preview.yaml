@@ -12,7 +12,13 @@ on:
       - closed
 
 permissions:
-  contents: read
+  # contents: read
+  # TODO This is temporary, remove it again later!
+  contents: write-all
+  pages: write
+  id-token: write
+  issues: write
+  pull-requests: write
 
 concurrency: preview-${{ github.ref }}
 
