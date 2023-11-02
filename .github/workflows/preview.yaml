@@ -36,7 +36,16 @@ jobs:
         # run: ./build.sh
         run: echo "Hi! Buidling..."
 
+      - uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            workflows:
+              - '.github/workflows/**'
+
       - name: Deploy preview
+        # https://github.com/www-learn-study/saraswati.learn.study/issues/50
+        if: steps.changes.outputs.workflows == 'false'
         # TODO Re-check if https://github.com/actions/deploy-pages#inputs- support of "preview" is no longer "only in alpha currently and is not available to the public"
         uses: rossjrw/pr-preview-action@v1
         with:
