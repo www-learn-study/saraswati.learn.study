@@ -60,7 +60,10 @@ jobs:
         env:
           PUBLIC_URL: ${{ steps.baseurl.outputs.relative }}
 
-      - uses: EndBug/pages-preview@196e85fb8eb6e55cb82c565e2bffa8911d6ee2d6 # v1.1.1
+      # see https://github.com/EndBug/pages-preview/issues/20
+      # pending https://github.com/EndBug/pages-preview/pull/21
+      # - uses: EndBug/pages-preview@196e85fb8eb6e55cb82c565e2bffa8911d6ee2d6 # v1.1.1
+      - uses: vorburger/pages-preview@a5d03757567f1de500903d9cf7e35c99a7514d69
         with:
           build_dir: site
           # https://github.com/EndBug/pages-preview/issues/20
