@@ -24,7 +24,7 @@ jobs:
     permissions:
       issues: write
       pull-requests: write
-      
+
     steps:
       - name: Checkout PR head
         if: ${{ startsWith(github.event_name, 'pull_request') && github.event.action != 'closed' }}
