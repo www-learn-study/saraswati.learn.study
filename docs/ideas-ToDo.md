@@ -8,10 +8,13 @@
 1. #Design Homepage HTML black and matrix-like green with https://github.com/Rezmason/matrix
 1. #Hack Codelabs directory site (pending https://github.com/googlecodelabs/tools/pull/884)
 1. #Hack Slides
+   * https://remarkjs.com
+   * https://revealjs.com
+   * https://marp.app
 1. #Hack MkDocs
 1. #Write GitHub 101 Codelab
 1. #Write HTML 101 Codelab
-   - How to preview static HTML from https://vscode.dev ?
+   * How to preview static HTML from https://vscode.dev ?
 1. #EDU A. iPhone Customization Codelab
 1. #Hack Homepage client-side multilingual how-to?
 1. #Write ML!
