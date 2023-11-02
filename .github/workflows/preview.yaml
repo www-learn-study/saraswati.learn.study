@@ -12,9 +12,6 @@ on:
       - reopened
       - closed
 
-permissions:
-  contents: read
-
 concurrency:
   group: preview-${{ github.event_name }}-${{ github.event.number || github.ref_name }}
   cancel-in-progress: true
