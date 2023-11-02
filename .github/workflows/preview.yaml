@@ -22,13 +22,13 @@ jobs:
     runs-on: ubuntu-latest
     # Sets permissions of the GITHUB_TOKEN to allow post comment with Preview URL
     permissions:
-      issues: write
       pull-requests: write
 
     steps:
       - name: Checkout PR head
-        if: ${{ startsWith(github.event_name, 'pull_request') && github.event.action != 'closed' }}
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          fetch-depth: 0
 
       - name: Build
         if: ${{ github.event.action != 'closed' }} # Skipping these steps if the PR has been closed
