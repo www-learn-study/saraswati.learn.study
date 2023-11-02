@@ -43,4 +43,4 @@ jobs:
           # https://github.com/www-learn-study/previews
           deploy-repository: www-learn-study/previews
           # custom-url: https://www-learn-study.github.io/previews
-          token: PREVIEW_TOKEN
+          token: ${{ secrets.PREVIEW_TOKEN }}
