@@ -1,73 +1,42 @@
-# https://github.com/EndBug/pages-preview
-# https://github.com/EndBug/pages-preview/blob/main/dependents/source_repo.yml
+# https://github.com/rossjrw/pr-preview-action
 
 name: Preview
 on:
   # NOT on push: branches: - 'main'
-  delete:
+  # ? delete:
   pull_request_target:
     types:
       - opened
-      - synchronize
       - reopened
+      - synchronize
       - closed
 
 permissions:
   contents: read
 
-concurrency:
-  group: preview-${{ github.event_name }}-${{ github.event.number || github.ref_name }}
-  cancel-in-progress: true
+concurrency: preview-${{ github.ref }}
 
 jobs:
   preview:
     name: Preview
     runs-on: ubuntu-latest
-    env:
-      # https://github.com/www-learn-study/previews
-      PREVIEW_REPO: www-learn-study/previews
-      PAGES_BASE: https://www-learn-study.github.io/previews
 
     steps:
       - name: Checkout PR head
         if: ${{ startsWith(github.event_name, 'pull_request') && github.event.action != 'closed' }}
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-        with:
-          ref: refs/pull/${{ github.event.pull_request.number }}/merge
-
-      # This will calculate the base URL for the website, based on the event that triggered the workflow.
-      # Leave this step as it is, unless you know what you're doing.
-      - name: Determine base URL
-        if: ${{ github.event.action != 'closed' }}
-        id: baseurl
-        run: |
-          if [ "${{ github.event_name }}" == "pull_request_target" ]; then
-            full="${{ env.PAGES_BASE }}/${{ github.repository }}/pr/${{ github.event.number }}"
-          else
-            full="${{ env.PAGES_BASE }}/${{ github.repository }}/branch/${{ github.ref_name }}"
-          fi
-
-          relative=/$(echo "$full" | cut -d/ -f4-)
-
-          echo "full=$full" >> "$GITHUB_OUTPUT"
-          echo "relative=$relative" >> "$GITHUB_OUTPUT"
-        shell: bash
 
       - name: Build
         if: ${{ github.event.action != 'closed' }} # Skipping these steps if the PR has been closed
         # run: ./build.sh
         run: echo "Hi! Buidling..."
-        env:
-          PUBLIC_URL: ${{ steps.baseurl.outputs.relative }}
 
-      # see https://github.com/EndBug/pages-preview/issues/20
-      # pending https://github.com/EndBug/pages-preview/pull/21
-      # - uses: EndBug/pages-preview@196e85fb8eb6e55cb82c565e2bffa8911d6ee2d6 # v1.1.1
-      - uses: vorburger/pages-preview@a5d03757567f1de500903d9cf7e35c99a7514d69
+      - name: Deploy preview
+        # TODO Re-check if https://github.com/actions/deploy-pages#inputs- support of "preview" is no longer "only in alpha currently and is not available to the public"
+        uses: rossjrw/pr-preview-action@v1
         with:
-          build_dir: site
-          # https://github.com/EndBug/pages-preview/issues/20
-          deployments: false
-          preview_base_url: ${{ env.PAGES_BASE }}
-          preview_repo: ${{ env.PREVIEW_REPO }}
-          preview_token: ${{ secrets.PREVIEW_TOKEN }}
+          source-dir: ./site/
+          # https://github.com/www-learn-study/previews
+          deploy-repository: www-learn-study/previews
+          # custom-url: https://www-learn-study.github.io/previews
+          token: PREVIEW_TOKEN
