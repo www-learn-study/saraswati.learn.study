@@ -66,8 +66,6 @@ jobs:
       - uses: vorburger/pages-preview@a5d03757567f1de500903d9cf7e35c99a7514d69
         with:
           build_dir: site
-          # https://github.com/EndBug/pages-preview/issues/20
-          deployments: false
           preview_base_url: ${{ env.PAGES_BASE }}
           preview_repo: ${{ env.PREVIEW_REPO }}
           preview_token: ${{ secrets.PREVIEW_TOKEN }}
