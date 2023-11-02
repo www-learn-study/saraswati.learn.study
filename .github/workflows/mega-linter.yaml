@@ -40,6 +40,7 @@ permissions:
   contents: read
   pull-requests: write
   issues: write
+  workflows: write
 
 jobs:
   megalinter:
