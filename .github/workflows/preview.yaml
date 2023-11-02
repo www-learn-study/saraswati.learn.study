@@ -47,7 +47,7 @@ jobs:
         # https://github.com/www-learn-study/saraswati.learn.study/issues/50
         if: steps.changes.outputs.workflows == 'false'
         # TODO Re-check if https://github.com/actions/deploy-pages#inputs- support of "preview" is no longer "only in alpha currently and is not available to the public"
-        uses: rossjrw/pr-preview-action@183082fd714654433c8e2f6daedbfb4f20f2a94a # v1.4.4 
+        uses: rossjrw/pr-preview-action@183082fd714654433c8e2f6daedbfb4f20f2a94a # v1.4.4
         with:
           source-dir: ./site/
           # https://github.com/www-learn-study/previews
