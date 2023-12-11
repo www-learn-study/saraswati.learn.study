@@ -72,7 +72,7 @@ jobs:
       # MegaLinter
       - name: MegaLinter
         # Keep the version in sync with bin/megalinter.sh
-        uses: oxsecurity/megalinter/flavors/javascript@b48455a119cc28045eee8f1e9d0a542a85e71f4f # v7.5.0
+        uses: oxsecurity/megalinter/flavors/javascript@7e042c726c68415475b05a65a686c612120a1232 # v7.7.0
 
         id: ml
 
