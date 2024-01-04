@@ -1,5 +1,7 @@
 # Ideas ToDo
 
+see also https://github.com/www-learn-study/ToDoNotes/blob/main/README.md
+
 ## Must
 
 1. #Hack Codelab #1 (with Bazel)
